@@ -1,17 +1,24 @@
-import React, { useEffect } from 'react';
-// import styles from "./App.module.css";
-// import { Cards,Charts,CountryPicker } from "./components";
-// import { fetchData } from "./api";
-function CountryPicker() {
-// useEffect(() => {
-//  const data=fetchData()
-//  console.log("inside app.js",data) 
-// },[])
+import React, { useState, useEffect } from 'react';
+import { NativeSelect, FormControl } from '@material-ui/core';
+import {fetchCountries  } from "../../api/index";
+import styles from "./CountryPicker.module.css";
+function CountryPicker({handleCountryChange}) {
+  const [countries, setCountries] = useState([]);
 
+  useEffect(() => {
+    const fetchAPI = async () => {
+      setCountries(await fetchCountries());
+    };
+
+    fetchAPI();
+  }, []);
   return (
-    <div>
-      <text>CountryPicker</text>
-    </div>
+    <FormControl className={styles.formControl}>
+      <NativeSelect defaultValue="" onChange={(e) => handleCountryChange(e.target.value)}>
+        <option value="">Pakistan</option>
+        {countries.map((country, i) => <option key={i} value={country}>{country}</option>)}
+      </NativeSelect>
+    </FormControl>
   );
 }
 

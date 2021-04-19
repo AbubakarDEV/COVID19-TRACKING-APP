@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
 // import cx from 'classnames';
@@ -13,12 +13,12 @@ function CardComponent({ className, cardTitle, value, lastUpdate, cardSubtitle }
         {cardTitle}
       </Typography>
       <Typography variant="h5" component="h2">
-        <CountUp start={0} end={value} duration={2.75} separator="," />
+        <CountUp start={0} end={value} duration={2} separator="," />
       </Typography>
       <Typography color="textSecondary">
         {new Date(lastUpdate).toDateString()}
       </Typography>
-      <Typography variant="body2" component="p">
+      <Typography variant="h6" component="p">
         {cardSubtitle}
       </Typography>
     </CardContent>

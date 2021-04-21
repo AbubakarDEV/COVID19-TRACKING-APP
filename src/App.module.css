@@ -9,8 +9,10 @@ body {
 }
 
 .image {
-  width: 370px;
+  width: 300px;
   margin-top: 50px;
+  height: 200px;
+  /* resize: both; */
 }
 
 @media only screen and (max-width: 770px) {

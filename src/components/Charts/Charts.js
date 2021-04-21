@@ -5,6 +5,7 @@ import { fetchDailyData } from "../../api/index";
 
 function Charts({ data: { confirmed, recovered, deaths }, country }) {
   const [dailyData, setDailyData] = React.useState({});
+  // console.log("iside chart",data," ",country)
   useEffect(() => {
     const fetchMyAPI = async () => {
       const initialDailyData = await fetchDailyData();

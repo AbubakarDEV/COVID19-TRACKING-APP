@@ -12,8 +12,8 @@ function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
 
   return (
     <div className={styles.container}>
-      <Typography gutterBottom variant="h4" component="h2">Global</Typography>
-      <Grid container spacing={3} justify="center">
+      {/* <Typography gutterBottom variant="h4" component="h2">Global</Typography> */}
+      <Grid container spacing={4} justify="space-around">
         <CardComponent
           className={styles.infected}
           cardTitle="Infected"

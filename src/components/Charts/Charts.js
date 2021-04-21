@@ -16,7 +16,7 @@ function Charts({ data: { confirmed, recovered, deaths }, country }) {
     fetchMyAPI();
   }, []);
 
-  console.log("inside charts",country)
+  // console.log("inside charts",country)
 
   const barChart = (
     confirmed ? (

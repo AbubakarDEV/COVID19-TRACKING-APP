@@ -7,7 +7,6 @@ export const fetchData = async (country) => {
   if (country) {
     changeableUrl=`${url}/countries/${country}`
   }
-  console.log(country)
   try {
     const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios.get(changeableUrl);
     return { confirmed, recovered, deaths, lastUpdate };
@@ -17,7 +16,6 @@ export const fetchData = async (country) => {
 };
 
 
-// Instead of Global, it fetches the daily data for the US
 export const fetchDailyData = async () => {
   try {
     const { data } = await axios.get('https://api.covidtracking.com/v1/us/daily.json');

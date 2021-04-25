@@ -16,10 +16,7 @@ function App() {
     getdata()
   },[])
   const handleCountryChange=async(country)=>{
-    // console.log(country)
     const fetchdata =await fetchData(country);
-    // console.log(fetchdata)
-    // setApidata(fetchdata,country)
     setCountry(country)
     setApidataChart(fetchdata)
     
